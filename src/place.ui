@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="MemoradoPlace" parent="AdwActionRow">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="selectable">False</property>
+
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+    </child>>
+  </template>
+</interface>
