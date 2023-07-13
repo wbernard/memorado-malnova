@@ -3,71 +3,80 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="MemoradoWindow" parent="AdwApplicationWindow">
-    <property name="default-width">300</property>
-    <property name="default-height">500</property>
-    <property name="title"> Kartarujo </property>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
+    <property name="default-width">600</property>
+    <property name="default-height">600</property>
+    <property name="title"> Memorado </property>
+    <property name="content">
+
+      <object class="AdwNavigationView">
         <child>
-          <object class="GtkHeaderBar" id="header_bar">
-            <child type="end">
-              <object class="GtkMenuButton">
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="menu-model">primary_menu</property>
-              </object>
-            </child>
-          </object>
-        </child>
-        <child>
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>"
-            <child>
-              <object class="GtkScrolledWindow">
-                <property name="hexpand">true</property>
-                <property name="vexpand">true</property>
-                <property name="margin-top">6</property>
-                <property name="margin-bottom">6</property>
-                <property name="margin-start">6</property>
-                <property name="margin-end">6</property>
-                <child>
-                  <object class="GtkBox" id="places_box">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GtkBox" id="places_inner_box">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="orientation">vertical</property>
-                        <property name="margin-start">8</property>
-                        <property name="margin-end">8</property>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <style>
-                          <class name="places"/>
-                        </style>
+          <object class="AdwNavigationPage">
+            <property name="title" translatable="yes">Page 1</property>
+            <property name="tag">page-1</property>
+            <property name="child">
+              <object class="AdwToolbarView">
+                <child type="top">
+                  <object class="AdwHeaderBar" id="header_bar">
+                    <child type="end">
+                      <object class="GtkMenuButton">
+                        <property name="icon-name">open-menu-symbolic</property>
+                        <property name="menu-model">primary_menu</property>
                       </object>
                     </child>
                   </object>
                 </child>
+                <property name="content">
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>"
+                    <child>
+                      <object class="GtkScrolledWindow">
+                        <property name="hexpand">true</property>
+                        <property name="vexpand">true</property>
+                        <property name="margin-top">6</property>
+                        <property name="margin-bottom">6</property>
+                        <property name="margin-start">6</property>
+                        <property name="margin-end">6</property>
+                        <child>
+                          <object class="GtkBox" id="places_box">
+                            <property name="can-focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkBox" id="places_inner_box">
+                                <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="margin-start">8</property>
+                                <property name="margin-end">8</property>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                                <style>
+                                  <class name="places"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+
+                <child type="bottom">
+                    <object class="GtkButton" id="neue_kartei">
+                      <property name="label">Nova Kartaro</property>
+                      <property name="action-name">win.open</property>
+                      <property name="sensitive">True</property>"
+                      <property name="margin-bottom">8</property>
+                      <property name="margin-start">8</property>
+                      <property name="margin-end">8</property>
+                    </object>
+                </child>
               </object>
-            </child>
-          </object>
-        </child>
-        <child type="end">
-          <object class="GtkButton" id="neue_kartei">
-            <property name="label">Nova Kartaro</property>
-            <property name="action-name">win.open</property>
-            <property name="sensitive">True</property>"
-            <property name="margin-bottom">8</property>
-            <property name="margin-start">8</property>
-            <property name="margin-end">8</property>
+            </property>
           </object>
         </child>
       </object>
-    </child>
+    </property>
   </template>
   <menu id="primary_menu">
     <section>
@@ -85,6 +94,5 @@
       </item>
     </section>
   </menu>
-</interface
->
+</interface>
 
