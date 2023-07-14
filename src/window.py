@@ -35,9 +35,6 @@ class MemoradoWindow(Adw.ApplicationWindow):
     places_inner_box = Gtk.Template.Child()
     neue_kartei = Gtk.Template.Child()
 
-    #kartenbox = Gtk.Template.Child()
-
-
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -48,24 +45,12 @@ class MemoradoWindow(Adw.ApplicationWindow):
         places = MemoradoPlaces()
         self.places_inner_box.append(places)
 
-        #places.connect("updated", self._on_places_updated)
-
         self.neue_kartei.connect("clicked", self.auf_neue_kartei)
 
 
 
     def auf_neue_kartei(self, w):
         print('neue Kartei wird erstellt')
-
-    def _on_places_updated(self, button, path):
-        #self._reset_to_path(path)
-        self._go_to_files_view(duration=0)
-
-    def _go_to_files_view(self, duration):
-        self.content_deck.set_visible_child(self.files_stack)
-        self.files_stack.props.transition_duration = duration
-        self.files_stack.set_visible_child(self.files_box)
-
 
 
     

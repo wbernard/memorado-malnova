@@ -61,7 +61,7 @@ class MemoradoPlaces(Gtk.Stack):
             kartei TEXT, karte_vorn TEXT, karte_hinten TEXT)""")
 
         self._groups_box.append(self._places_group)
-
+        print('places_group ', self._places_group)
         self.add_named(self._groups_box, "groups")
 
     def db_nutzen(self, befehl):
@@ -105,7 +105,7 @@ class MemoradoPlaces(Gtk.Stack):
         self.conn.close()
 
         self._groups_box.append(self.kart_grupo)
-
+        print('kart_grupo ', self.kart_grupo)
         self.add_named(self._groups_box, "groups")
 
 
